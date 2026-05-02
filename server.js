@@ -7,7 +7,7 @@ app.use(cors());
 app.use(express.json());
 
 // 🔗 Connect to MongoDB
-mongoose.connect("mongodb://harshvt16_db_user:TeWLEahgIMzSyjOI@ac-9l4crmx-shard-00-00.w7mioz6.mongodb.net:27017,ac-9l4crmx-shard-00-01.w7mioz6.mongodb.net:27017,ac-9l4crmx-shard-00-02.w7mioz6.mongodb.net:27017/?ssl=true&replicaSet=atlas-4p0fcg-shard-0&authSource=admin&appName=portfolio-cluster")
+mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB connected"))
   .catch(err => console.log(err));
 
