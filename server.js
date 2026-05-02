@@ -40,3 +40,7 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+app.get("/delete-all", async (req, res) => {
+  await Project.deleteMany({});
+  res.send("All data deleted");
+});
