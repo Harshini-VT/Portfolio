@@ -1,4 +1,4 @@
-fetch("http://localhost:5000/projects")
+fetch("https://portfolio-backend-npsb.onrender.com/projects")
   .then(res => res.json())
   .then(data => {
     const container = document.getElementById("projects-list");
@@ -19,3 +19,14 @@ fetch("http://localhost:5000/projects")
 function scrollToProjects() {
   document.getElementById("projects").scrollIntoView({ behavior: "smooth" });
 }
+const cards = document.querySelectorAll(".project-card");
+
+cards.forEach(card => {
+  card.addEventListener("mouseenter", () => {
+    card.style.transform = "scale(1.05)";
+  });
+
+  card.addEventListener("mouseleave", () => {
+    card.style.transform = "scale(1)";
+  });
+});
